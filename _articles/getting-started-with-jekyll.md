@@ -46,3 +46,52 @@ That's it! Jekyll handles the rest.
 5. **Community** - Large ecosystem of themes and plugins
 
 Jekyll transforms text into websites, and it does it beautifully.
+
+## The Power of Liquid Templates
+
+Jekyll uses the [Liquid templating language](https://shopify.github.io/liquid/) to process templates. This gives you dynamic-like features in a static site:
+
+**Variables:**
+```liquid
+{{ page.title }}
+{{ site.description }}
+{{ content }}
+```
+
+**Loops:**
+```liquid
+{% for post in site.posts %}
+  <h2>{{ post.title }}</h2>
+{% endfor %}
+```
+
+**Conditionals:**
+```liquid
+{% if page.published %}
+  <p>This post is live!</p>
+{% endif %}
+```
+
+Liquid makes it easy to create reusable components, iterate over collections, and build complex layouts without any server-side code.
+
+## Getting Started
+
+Ready to try Jekyll? Here's the quickest way to get started:
+
+```bash
+# Install Jekyll
+gem install bundler jekyll
+
+# Create a new site
+jekyll new my-blog
+
+# Navigate to your site
+cd my-blog
+
+# Serve locally
+bundle exec jekyll serve
+
+# Visit http://localhost:4000
+```
+
+Within minutes, you'll have a working blog ready to customize!
