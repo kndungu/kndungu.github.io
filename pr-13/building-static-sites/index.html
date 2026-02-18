@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A blog powered by Jekyll and GitHub Pages">
+    <meta name="author" content="kndungu">
+    <title>Why Static Sites Are My Go-To Choice</title>
+
+    <!-- SEO -->
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Why Static Sites Are My Go-To Choice | kndungu’s Blog</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Why Static Sites Are My Go-To Choice" />
+<meta name="author" content="kndungu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="After years of wrestling with WordPress, Django, Rails, and various other dynamic CMSs, I’ve come to deeply appreciate the elegant simplicity and raw power of static site generators. Here’s my journey and reasoning." />
+<meta property="og:description" content="After years of wrestling with WordPress, Django, Rails, and various other dynamic CMSs, I’ve come to deeply appreciate the elegant simplicity and raw power of static site generators. Here’s my journey and reasoning." />
+<link rel="canonical" href="https://kndungu.github.io/pr-13/building-static-sites/" />
+<meta property="og:url" content="https://kndungu.github.io/pr-13/building-static-sites/" />
+<meta property="og:site_name" content="kndungu’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-02-18T07:40:03+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Why Static Sites Are My Go-To Choice" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"kndungu"},"dateModified":"2026-02-18T07:40:03+00:00","datePublished":"2026-02-18T07:40:03+00:00","description":"After years of wrestling with WordPress, Django, Rails, and various other dynamic CMSs, I’ve come to deeply appreciate the elegant simplicity and raw power of static site generators. Here’s my journey and reasoning.","headline":"Why Static Sites Are My Go-To Choice","mainEntityOfPage":{"@type":"WebPage","@id":"https://kndungu.github.io/pr-13/building-static-sites/"},"url":"https://kndungu.github.io/pr-13/building-static-sites/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/pr-13/assets/css/style.css">
+
+    <!-- Feed -->
+    <link type="application/atom+xml" rel="alternate" href="https://kndungu.github.io/pr-13/feed.xml" title="kndungu&apos;s Blog" />
+</head>
+
+<body>
+    <header class="site-header">
+    <div class="container">
+        <div class="site-title">
+            <a href="/pr-13/">kndungu's Blog</a>
+        </div>
+        <nav class="site-nav">
+            <a href="/pr-13/">Home</a>
+            <a href="https://github.com/kndungu" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </div>
+</header>
+
+
+    <main class="container">
+        
+
+
+
+
+
+
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">Why Static Sites Are My Go-To Choice</h1>
+        <div class="post-meta">
+            <time datetime="">
+                Published 
+            </time>
+            
+            
+            <span class="author"> • by kndungu</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+        <p>After years of wrestling with WordPress, Django, Rails, and various other dynamic CMSs, I’ve come to deeply appreciate the elegant simplicity and raw power of static site generators. Here’s my journey and reasoning.</p>
+
+<h2 id="the-modern-static-site-renaissance">The Modern Static Site Renaissance</h2>
+
+<p>Static sites aren’t a step backward—they represent a thoughtful rediscovery of simplicity in our over-engineered world. Today’s static site generators brilliantly combine the best of all worlds:</p>
+
+<ul>
+  <li>Lightning-fast deployment (just HTML, CSS, and JS files)</li>
+  <li>Developer-friendly workflows (Git version control, Markdown content)</li>
+  <li>Modern dynamic-like features (JavaScript for rich interactivity)</li>
+  <li>Scalability that’s essentially infinite</li>
+  <li>Maintenance overhead approaching zero</li>
+</ul>
+
+<h2 id="what-i-gained-by-going-static">What I Gained by Going Static</h2>
+
+<h3 id="unmatched-speed">Unmatched Speed</h3>
+
+<p>Static HTML files represent the absolute fastest possible way to serve web content. No database queries. No server-side rendering. No backend processing overhead. Simply: Request → Response. Done.</p>
+
+<p>My blog serves pages in under 50ms. Try beating that with WordPress!</p>
+
+<h3 id="rock-solid-security">Rock-Solid Security</h3>
+
+<p>No server-side code execution means no server-side vulnerabilities. Period. No SQL injection attacks, no remote code execution exploits, no compromised plugin backdoors, no late-night security patches. Just files sitting on a CDN.</p>
+
+<p>The attack surface is essentially zero!</p>
+
+<h3 id="minimal-cost-or-free">Minimal Cost (Or Free!)</h3>
+
+<p>Hosting static files is dirt cheap or completely free:</p>
+<ul>
+  <li>GitHub Pages: 100% Free</li>
+  <li>Netlify: Free tier is incredibly generous</li>
+  <li>Vercel: Free for personal projects</li>
+  <li>Cloudflare Pages: Free with unlimited bandwidth</li>
+  <li>AWS S3 + CloudFront: Literally pennies per month</li>
+  <li>DigitalOcean Spaces: $5/month for unlimited sites</li>
+</ul>
+
+<p>My total hosting cost? <strong>$0/month</strong>.</p>
+
+<h3 id="stellar-developer-experience">Stellar Developer Experience</h3>
+
+<p>Everything is version controlled—posts, layouts, assets, configuration:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"Add: New blog post about the joy of static sites"</span>
+git push origin main
+<span class="c"># Site automatically builds and deploys in ~60 seconds 🚀</span>
+</code></pre></div></div>
+
+<p>No clunky FTP uploads. No database migrations. No server SSH nightmares. No manual backups.</p>
+
+<p>Just pure Git workflow bliss.</p>
+
+<h2 id="what-i-gave-up-and-why-i-dont-care">What I Gave Up (And Why I Don’t Care)</h2>
+
+<h3 id="web-based-admin-interface">Web-Based Admin Interface</h3>
+
+<p>Most static sites don’t have fancy web admin panels like WordPress. But honestly? I much prefer my text editor (VS Code) and Git. More control, better workflow, and no “the admin panel is down” emergencies.</p>
+
+<h3 id="traditional-real-time-comments">Traditional Real-Time Comments</h3>
+
+<p>You can’t have old-school server-side database comments. But better alternatives exist:</p>
+<ul>
+  <li>GitHub Issues or Discussions (version-controlled comments!)</li>
+  <li>Third-party services (Disqus, utterances, giscus)</li>
+  <li>Static comments (PRs that add comments to your repo)</li>
+  <li>Or just… embrace the simplicty of no comments</li>
+</ul>
+
+<p>I actually get more thoughtful feedback via GitHub Issues anyway.</p>
+
+<h3 id="server-side-dynamic-content">Server-Side Dynamic Content</h3>
+
+<p>Static sites can’t generate pages on-the-fly based on user input. But here’s the thing: 99% of websites don’t actually need this capability! And for the remaining 1% that do, you can leverage the JAMstack approach with client-side JavaScript and serverless APIs.</p>
+
+<p>Turns out most “dynamic” features are better handled client-side anyway.</p>
+
+<h2 id="the-jamstack-approach">The JAMstack Approach</h2>
+
+<p>JAMstack (JavaScript, APIs, Markup) brings dynamic features to static sites:</p>
+
+<ul>
+  <li><strong>JavaScript</strong> - Client-side interactivity</li>
+  <li><strong>APIs</strong> - External services for dynamic features</li>
+  <li><strong>Markup</strong> - Pre-generated HTML</li>
+</ul>
+
+<p>This blog uses this approach for the version viewer - it’s entirely JavaScript-based, fetching data from GitHub’s API.</p>
+
+<h2 id="when-static-sites-are-perfect">When Static Sites Are Perfect</h2>
+
+<p>Static architectures shine for:</p>
+<ul>
+  <li>Personal and professional blogs</li>
+  <li>Portfolio and showcase sites</li>
+  <li>Technical documentation</li>
+  <li>Marketing and landing pages</li>
+  <li>Project websites</li>
+  <li>News and magazine sites (with build-on-publish)</li>
+  <li>Small business websites</li>
+</ul>
+
+<p>Static sites are NOT the right choice for:</p>
+<ul>
+  <li>Real-time collaboration platforms (Google Docs, Figma)</li>
+  <li>User-generated content platforms (Reddit, Stack Overflow)</li>
+  <li>Complex SaaS web applications</li>
+  <li>Sites requiring thousands of updates daily</li>
+  <li>E-commerce with huge, constantly changing inventories</li>
+</ul>
+
+<h2 id="my-current-stack">My Current Stack</h2>
+
+<p>This blog runs on a beautifully simple stack:</p>
+
+<ul>
+  <li><strong>Jekyll</strong> - Powerful static site generator (written in Ruby)</li>
+  <li><strong>GitHub Pages</strong> - Free, reliable hosting with CDN</li>
+  <li><strong>Git</strong> - Version control AND metadata source (dates, revisions)</li>
+  <li><strong>GitHub Actions</strong> - Automated CI/CD pipelines</li>
+  <li><strong>Markdown</strong> - Clean, portable content format</li>
+  <li><strong>Liquid</strong> - Templating for dynamic-like features</li>
+</ul>
+
+<p><strong>Total hosting cost:</strong> $0/month<br />
+<strong>Total maintenance time:</strong> ~0 hours/month<br />
+<strong>Total peace of mind:</strong> Priceless ✨</p>
+
+<h2 id="the-final-word">The Final Word</h2>
+
+<p>Static sites stripped away all the complexity I didn’t actually need and gave me exactly what I wanted:</p>
+
+<ul>
+  <li>Write content in distraction-free Markdown</li>
+  <li>Version control absolutely everything</li>
+  <li>Push to deploy (with automatic previews!)</li>
+  <li>Fast, secure, and free hosting forever</li>
+</ul>
+
+<p>For blogs, portfolios, documentation, and content-focused sites, going static is absolutely the way forward. The future is static!</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+<div class="post-history" 
+     data-owner="kndungu" 
+     data-repo="kndungu.github.io" 
+     data-path="_articles/building-static-sites.md"
+     data-branch="poc">
+    <hr>
+    <div class="history-info">
+        <h3>📜 Post History & Versions</h3>
+        <p>This blog post is version-controlled. You can view all changes, edits, and revisions made over time.</p>
+
+        
+
+<div class="version-viewer">
+    <button id="view-versions-btn" class="btn-versions">
+        ▼ View Past Versions & Diffs
+    </button>
+
+    <div id="versions-panel" class="versions-panel" style="display: none;">
+        <div id="versions-list"></div>
+    </div>
+</div>
+
+<!-- Modal for viewing versions and diffs -->
+<div id="version-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="version-modal-title">Version</h2>
+            <span class="modal-close">&times;</span>
+        </div>
+        <div id="version-content" class="modal-body"></div>
+    </div>
+</div>
+
+
+        <a href="https://github.com/kndungu/kndungu.github.io/commits/poc/_articles/building-static-sites.md" class="history-button"
+            target="_blank" rel="noopener">
+            View Full History on GitHub →
+        </a>
+        <p class="history-meta">
+            <small>File: <code>_articles/building-static-sites.md</code></small><br>
+            
+            <small>Revisions: 1 • Last modified: </small>
+            
+        </p>
+    </div>
+</div>
+
+
+    <footer class="post-footer">
+        <nav class="post-navigation">
+            
+            <div class="prev-post">
+                <a href="/pr-13/automation-and-ci-cd/">← Automating Everything with CI/CD</a>
+            </div>
+            
+
+            
+            <div class="next-post">
+                <a href="/pr-13/getting-started-with-jekyll/">Getting Started with Jekyll →</a>
+            </div>
+            
+        </nav>
+    </footer>
+</article>
+
+<!-- Include version viewer JavaScript -->
+<script src="/pr-13/assets/js/post-history.js"></script>
+
+    </main>
+
+    <footer class="site-footer">
+    <div class="container">
+        <p>&copy; 2026 kndungu. All content version-controlled and transparent.</p>
+        <p>Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a> and <a
+                href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a></p>
+    </div>
+</footer>
+
+</body>
+
+</html>
