@@ -54,11 +54,14 @@ This approach treats blog content like software - constantly improving, openly d
 
 I'll be writing about:
 
-- Technology and software development
-- Tutorials and how-to guides
-- Personal projects and experiments
-- Thoughts on software engineering practices
-- And whatever else seems interesting!
+- **Technology and software development** - Deep dives into interesting problems and solutions
+- **Tutorials and how-to guides** - Practical, actionable content you can use
+- **Personal projects and experiments** - Building in public, sharing what works (and what doesn't)
+- **Software engineering practices** - Thoughts on code quality, testing, and team dynamics
+- **Developer tools and workflows** - Making development more efficient and enjoyable
+- **And whatever else seems interesting!** - No strict rules, just authentic content
+
+All posts will evolve over time based on feedback, new learnings, and changing perspectives. That's the beauty of version control!
 
 ## Try It Yourself
 
