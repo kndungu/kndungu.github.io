@@ -8,15 +8,16 @@ layout: default
     {{ content }}
 
     <div class="posts-grid">
-        {% for post in site.posts %}
+        {% for post in site.articles %}
         {% assign post_filename = post.path | split: "/" | last | replace: ".md", "" %}
-        {% assign git_data = site.data.git_dates.posts[post_filename] %}
+        {% assign git_data = site.data.git_dates.articles[post_filename] %}
 
         <a href="{{ post.url | relative_url }}" class="post-card">
             <div class="post-card-image">
-                <img src="{{ '/assets/images/posts/' | append: post_filename | append: '.jpg' | relative_url }}"
+                <img src="{{ '/assets/images/default-post.svg' | relative_url }}"
+                    data-post-image="{{ '/assets/images/posts/' | append: post_filename | relative_url }}"
                     alt="{{ post.title }}"
-                    onerror="this.onerror=null; this.src='{{ '/assets/images/default-post.svg' | relative_url }}'">
+                    class="post-thumbnail">
             </div>
             <div class="post-card-content">
                 <h2 class="post-card-title">{{ post.title }}</h2>
@@ -32,7 +33,8 @@ layout: default
         {% endfor %}
     </div>
 
-    {% if site.posts.size == 0 %}
-    <p class="no-posts">No posts yet. Create your first post in the <code>_posts</code> directory!</p>
+    {% if site.articles.size == 0 %}
+    <p class="no-posts">No posts yet. Create your first post in the <code>_articles</code> directory!</p>
     {% endif %}
 </div>
+<script src="{{ '/assets/js/load-post-images.js' | relative_url }}"></script>

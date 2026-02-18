@@ -24,13 +24,13 @@ jobs:
           ruby-version: '3.1'
           bundler-cache: true
       
-      - name: Extract Git dates for posts
+      - name: Extract Git dates for articles
         run: |
           mkdir -p _data
           echo "# Auto-generated Git metadata for blog posts" > _data/git_dates.yml
-          echo "posts:" >> _data/git_dates.yml
+          echo "articles:" >> _data/git_dates.yml
           
-          for post in _posts/*.md; do
+          for post in _articles/*.md; do
             if [ -f "$post" ]; then
               filename=$(basename "$post")
               first_commit=$(git log --follow --format=%aI --reverse "$post" | head -1)

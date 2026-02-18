@@ -7,7 +7,23 @@ and provides interactive version viewing and diff comparison
 {% assign repo_owner = repo_parts[0] %}
 {% assign repo_name = repo_parts[1] %}
 
-<div class="post-history" data-owner="{{ repo_owner }}" data-repo="{{ repo_name }}" data-path="{{ page.path }}">
+{% comment %}
+Detect if we're in a PR preview by checking the baseurl
+PR previews have baseurl like /pr-11, production has empty baseurl
+{% endcomment %}
+{% assign is_pr_preview = false %}
+{% assign branch = "main" %}
+{% if site.baseurl contains "/pr-" %}
+    {% assign is_pr_preview = true %}
+    {% comment %}For PR previews, we need to detect which branch - for now use poc{% endcomment %}
+    {% assign branch = "poc" %}
+{% endif %}
+
+<div class="post-history" 
+     data-owner="{{ repo_owner }}" 
+     data-repo="{{ repo_name }}" 
+     data-path="{{ page.path }}"
+     data-branch="{{ branch }}">
     <hr>
     <div class="history-info">
         <h3>📜 Post History & Versions</h3>
@@ -15,7 +31,7 @@ and provides interactive version viewing and diff comparison
 
         {% include version-viewer.html %}
 
-        <a href="https://github.com/{{ site.repository }}/commits/main/{{ page.path }}" class="history-button"
+        <a href="https://github.com/{{ site.repository }}/commits/{{ branch }}/{{ page.path }}" class="history-button"
             target="_blank" rel="noopener">
             View Full History on GitHub →
         </a>

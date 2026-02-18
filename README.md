@@ -16,9 +16,9 @@ A personal blog powered by Jekyll and GitHub Pages, where every post is version-
 
 ### 2. Write Your First Blog Post
 
-Create a file in `_posts/` with **any filename you want**:
+Create a file in `_articles/` with **any filename you want**:
 
-**File**: `_posts/my-awesome-post.md`
+**File**: `_articles/my-awesome-post.md`
 ```markdown
 ---
 title: "My Awesome Post"
@@ -32,7 +32,7 @@ Your content here in Markdown...
 ### 3. Publish
 
 ```bash
-git add _posts/my-awesome-post.md
+git add _articles/my-awesome-post.md
 git commit -m "Add: My awesome post"
 git push origin main
 ```
@@ -75,10 +75,10 @@ Just edit, commit, and push:
 
 ```bash
 # Edit your post
-vim _posts/my-awesome-post.md
+vim _articles/my-awesome-post.md
 
 # Commit with descriptive message
-git add _posts/my-awesome-post.md  
+git add _articles/my-awesome-post.md  
 git commit -m "Update: Clarify the introduction"
 git push origin main
 ```
@@ -129,7 +129,7 @@ Every pull request automatically gets its own preview deployment!
 ├── _layouts/               # HTML templates
 ├── _includes/              # Reusable components  
 │   └── git-dates.html     # Git date extraction logic
-├── _posts/                 # Your blog posts
+├── _articles/                 # Your blog posts
 │   └── *.md               # Any filename works!
 ├── assets/css/            # Styling
 └── index.html            # Homepage
@@ -148,8 +148,29 @@ author: "Your Name"
 
 ### Adding Images
 
+**For images within post content:**
 1. Put images in `assets/images/`  
 2. Reference in posts: `![Alt text](/assets/images/photo.jpg)`
+
+**For homepage post thumbnails:**
+
+Add an image file to `assets/images/posts/` matching your post's filename:
+
+```
+_articles/my-awesome-post.md
+assets/images/posts/my-awesome-post.webp  ← Best (modern, smallest)
+                    my-awesome-post.png   ← Good (lossless, screenshots)
+                    my-awesome-post.jpg   ← Good (photos)
+                    my-awesome-post.svg   ← Good (logos, icons)
+```
+
+**Supported formats** (in order of preference):
+- **WebP** - Best compression, modern browsers (recommended for photos)
+- **PNG** - Lossless, great for screenshots or images with text
+- **JPG** - Standard for photographs
+- **SVG** - Scalable, perfect for logos and simple graphics
+
+The system automatically tries formats in order and falls back to the default image if none exist. Use whatever format best suits your content!
 
 ## 🔧 Local Development
 
@@ -188,7 +209,7 @@ All fetched dynamically from GitHub - no database needed!
 
 ### Simple Post
 
-**File**: `_posts/hello-world.md`
+**File**: `_articles/hello-world.md`
 ```markdown
 ---
 title: "Hello World"
@@ -199,7 +220,7 @@ This is my first post!
 
 ### Post with Code
 
-**File**: `_posts/python-tips.md`  
+**File**: `_articles/python-tips.md`  
 ```markdown
 ---
 title: "Python Tips"  
@@ -230,12 +251,12 @@ Click "View Full History on GitHub" to see:
 - Commit messages
 - When and who made changes  
 
-Example: `https://github.com/kndungu/kndungu.github.io/commits/main/_posts/hello-world.md`
+Example: `https://github.com/kndungu/kndungu.github.io/commits/main/_articles/hello-world.md`
 
 ## ⚠️ Troubleshooting
 
 **Post not showing?**
-- Check that file is in `_posts/` directory
+- Check that file is in `_articles/` directory
 - Verify front matter has `title` field  
 - Check GitHub Actions status in Actions tab
 

@@ -26,7 +26,7 @@ kndungu.github.io/
 │   ├── footer.html         # Site footer
 │   ├── git-dates.html      # Git date extraction logic
 │   └── post-history.html   # Git history component
-├── _posts/                  # Blog posts (Markdown files)
+├── _articles/                  # Blog posts (Markdown files)
 │   └── any-filename.md     # Posts can have any filename
 ├── _data/                   # Auto-generated data
 │   └── git_dates.yml       # Git commit dates (auto-generated)
@@ -64,7 +64,7 @@ Additionally, every pull request automatically triggers:
 - Automatic cleanup when PR closes
 
 ### 1. Writing a Blog Post
-Create a new Markdown file in `_posts/`:
+Create a new Markdown file in `_articles/`:
 ```
 my-first-post.md
 hello-world.md
@@ -127,7 +127,7 @@ Every post includes a built-in version viewer that lets readers:
 
 **History Link Format:**
 ```
-https://github.com/kndungu/kndungu.github.io/commits/main/_posts/filename.md
+https://github.com/kndungu/kndungu.github.io/commits/main/_articles/filename.md
 ```
 
 This shows:
@@ -146,7 +146,9 @@ The homepage (`index.html`) automatically lists all blog posts in reverse chrono
 ## Key Features
 
 ### Automatic Discovery
-Jekyll automatically discovers and publishes any Markdown file in `_posts/`. No manual configuration needed for new posts. Filename can be anything - no date prefix required.
+Jekyll automatically discovers and publishes any Markdown file in `_articles/`. No manual configuration needed for new posts. Filename can be anything - no date prefix required.
+
+**Technical Note**: This blog uses a custom Jekyll Collection (`_articles`) instead of the built-in `_posts` directory. Jekyll's `_posts` requires filenames to start with `YYYY-MM-DD-`, but collections allow completely arbitrary filenames. The `_articles` collection is configured in `_config.yml` to output pages with clean `/:title/` permalinks, giving you total freedom in naming while maintaining all blog functionality.
 
 ### Interactive Version Viewer
 Every blog post includes a built-in version viewer powered by GitHub API:
@@ -257,7 +259,7 @@ The version viewer is a client-side JavaScript application that uses GitHub's pu
    <div class="post-history" 
         data-owner="kndungu" 
         data-repo="kndungu.github.io" 
-        data-path="_posts/my-post.md">
+        data-path="_articles/my-post.md">
    ```
 
 2. **GitHub API Endpoints Used**:
@@ -322,7 +324,7 @@ Requires JavaScript enabled (graceful degradation: GitHub link still works).
 ### Creating a New Post
 ```bash
 # Create the file (any filename you want!)
-cat > _posts/hello-world.md << 'EOF'
+cat > _articles/hello-world.md << 'EOF'
 ---
 title: "Hello World"
 ---
@@ -331,7 +333,7 @@ This is my first blog post!
 EOF
 
 # Commit and push
-git add _posts/hello-world.md
+git add _articles/hello-world.md
 git commit -m "Add: Hello World blog post"
 git push origin main
 
@@ -347,10 +349,10 @@ git push origin main
 ### Updating a Post
 ```bash
 # Edit the file
-vim _posts/hello-world.md
+vim _articles/hello-world.md
 
 # Commit with descriptive message
-git add _posts/hello-world.md
+git add _articles/hello-world.md
 git commit -m "Update: Clarify introduction in Hello World post"
 git push origin main
 
@@ -365,7 +367,7 @@ git push origin main
 ### Viewing History
 Navigate to:
 ```
-https://github.com/kndungu/kndungu.github.io/commits/main/_posts/hello-world.md
+https://github.com/kndungu/kndungu.github.io/commits/main/_articles/hello-world.md
 ```
 
 Or click the "View History" button on the blog post page.
@@ -383,7 +385,7 @@ You'll see:
 git checkout -b add-new-post
 
 # Create or edit a post
-cat > _posts/my-new-post.md << 'EOF'
+cat > _articles/my-new-post.md << 'EOF'
 ---
 title: "My New Post"
 ---
@@ -392,7 +394,7 @@ This is a draft post I want to review before publishing.
 EOF
 
 # Commit and push to your branch
-git add _posts/my-new-post.md
+git add _articles/my-new-post.md
 git commit -m "Add: New post about X"
 git push origin add-new-post
 
@@ -401,8 +403,8 @@ git push origin add-new-post
 # https://kndungu.github.io/kndungu.github.io/pr-123/
 
 # Review the preview, make changes if needed
-vim _posts/my-new-post.md
-git add _posts/my-new-post.md
+vim _articles/my-new-post.md
+git add _articles/my-new-post.md
 git commit -m "Fix typo in new post"
 git push origin add-new-post
 
@@ -488,7 +490,7 @@ bundle exec jekyll serve
 ## Troubleshooting
 
 ### Post Not Showing Up
-- Check that file is in `_posts/` directory
+- Check that file is in `_articles/` directory
 - Verify front matter YAML is valid (at minimum: `title: "Your Title"`)
 - Check GitHub Actions workflow status in Actions tab
 - Look at workflow logs for errors

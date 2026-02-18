@@ -1,0 +1,85 @@
+---
+title: "Welcome to My Blog"
+---
+
+Welcome to my blog! This isn't your typical blog - it's a **living document** where every change is tracked, every edit is visible, and the complete history is available for anyone to explore.
+
+Think of it as a blog meets version control system. Transparency and history aren't just features here - they're fundamental principles.
+
+## What Makes This Blog Different?
+
+Every single blog post on this site is **version-controlled using Git**. That means:
+
+- You can see exactly when I published or updated each post
+- You can view the complete history of edits and revisions
+- You can see what changed and why (through commit messages)
+- Nothing is hidden or deleted—it's all in the history
+
+## How It Works
+
+This blog is powered by [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/). Here's the workflow:
+
+1. I write blog posts in Markdown
+2. I commit them to the `main` branch
+3. GitHub automatically builds and publishes the site
+4. You see the latest content at [kndungu.github.io](https://kndungu.github.io)
+
+Every post has a "View History" button at the bottom that shows all the changes made to that specific post over time.
+
+## Interactive Version Viewer
+
+One of the coolest features of this blog is the **built-in version viewer**. For every post, you can:
+
+- Browse through all previous versions
+- See exactly what changed between any two versions
+- View color-coded diffs (additions in green, deletions in red)
+- Read the commit messages explaining why changes were made
+
+Try clicking "View Past Versions & Diffs" on any post to explore this feature!
+
+## Why Version Control for Blogging?
+
+As ideas evolve, so should the content. Traditional blogs hide their edit history, but I believe in **transparent knowledge sharing**:
+
+- **Accountability**: I stand by my words, and you can hold me to them
+- **Evolution**: Watch how thoughts develop and mature over time
+- **Learning**: See mistakes, corrections, and improvements
+- **Trust**: No silent edits or hidden changes
+- **Context**: Understand the reasoning behind changes through commit messages
+- **Collaboration**: Others can suggest improvements via pull requests
+
+This approach treats blog content like software - constantly improving, openly developed, and fully documented.
+
+## What to Expect
+
+I'll be writing about:
+
+- **Technology and software development** - Deep dives into interesting problems and solutions
+- **Tutorials and how-to guides** - Practical, actionable content you can use
+- **Personal projects and experiments** - Building in public, sharing what works (and what doesn't)
+- **Software engineering practices** - Thoughts on code quality, testing, and team dynamics
+- **Developer tools and workflows** - Making development more efficient and enjoyable
+- **And whatever else seems interesting!** - No strict rules, just authentic content
+
+All posts will evolve over time based on feedback, new learnings, and changing perspectives. That's the beauty of version control!
+
+## Try It Yourself
+
+This entire setup is open source. You can:
+
+1. View the [repository source code](https://github.com/kndungu/kndungu.github.io)
+2. See how this blog is structured
+3. Fork it and create your own version-controlled blog
+4. Suggest improvements via pull requests
+
+Check out the README and ARCHITECTURE.md files in the repository for a complete guide on setting up your own blog like this.
+
+## Let's Get Started
+
+Thanks for reading! Feel free to explore the blog, check out the post histories, and see how ideas evolve over time.
+
+If you have questions, suggestions, or spot something that could be improved, don't hesitate to open an issue or submit a pull request on GitHub. This blog is a collaborative space!
+
+---
+
+**Note**: Use the "View Past Versions & Diffs" button below to see how this post has evolved since it was first published. You'll see multiple revisions showing how I refined the content over time!

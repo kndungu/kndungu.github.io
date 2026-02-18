@@ -18,24 +18,23 @@ plugins:
 # Using simple permalinks since dates come from Git, not filenames
 permalink: /:title/
 
-# Collections (optional, for future expansion)
-# collections:
-#   projects:
-#     output: true
-#     permalink: /projects/:path/
+# Collections - Using custom collection to allow any filename (no date prefix)
+collections:
+  articles:
+    output: true
+    permalink: /:title/
 
 # Defaults
-# These settings are automatically applied to all posts
-# Posts only need a title - dates come from Git commit history
+# These settings are automatically applied to all articles
+# Articles only need a title - dates come from Git commit history
 # The GitHub Action extracts first commit date (published) and last commit date (modified)
 defaults:
   - scope:
       path: ""
-      type: "posts"
+      type: "articles"
     values:
       layout: "post"
       author: "kndungu"
-      date: 2020-01-01  # Dummy date for Jekyll compatibility (overridden by Git dates)
 
 # Exclude from processing
 exclude:
