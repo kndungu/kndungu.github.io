@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="static-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0099CC;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#static-grad)"/>
+  <rect x="80" y="80" width="60" height="80" fill="white" opacity="0.9" rx="4"/>
+  <rect x="170" y="80" width="60" height="80" fill="white" opacity="0.9" rx="4"/>
+  <rect x="260" y="80" width="60" height="80" fill="white" opacity="0.9" rx="4"/>
+  <text x="200" y="205" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="white" text-anchor="middle">Static Sites</text>
+  <text x="200" y="235" font-family="Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.85)" text-anchor="middle">Fast • Simple • Secure</text>
+</svg>
