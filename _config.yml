@@ -18,11 +18,12 @@ plugins:
 # Using simple permalinks since dates come from Git, not filenames
 permalink: /:title/
 
-# Collections (optional, for future expansion)
-# collections:
-#   projects:
-#     output: true
-#     permalink: /projects/:path/
+# Collections - Using collections instead of posts to allow any filename
+collections:
+  posts:
+    output: true
+    permalink: /:title/
+    sort_by: published_date
 
 # Defaults
 # These settings are automatically applied to all posts
@@ -35,7 +36,6 @@ defaults:
     values:
       layout: "post"
       author: "kndungu"
-      date: "2020-01-01 00:00:00"  # Dummy date for Jekyll compatibility (overridden by Git dates)
 
 # Exclude from processing
 exclude:

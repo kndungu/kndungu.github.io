@@ -14,7 +14,7 @@ layout: default
 
         <a href="{{ post.url | relative_url }}" class="post-card">
             <div class="post-card-image">
-                <img src="{{ '/assets/images/posts/' | append: post_filename | append: '.jpg' | relative_url }}"
+                <img src="{{ '/assets/images/posts/' | append: post_filename | append: '.svg' | relative_url }}"
                     alt="{{ post.title }}"
                     onerror="this.onerror=null; this.src='{{ '/assets/images/default-post.svg' | relative_url }}'">
             </div>
