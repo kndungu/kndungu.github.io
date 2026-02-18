@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A blog powered by Jekyll and GitHub Pages">
+    <meta name="author" content="kndungu">
+    <title>Understanding Git Workflows</title>
+
+    <!-- SEO -->
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Understanding Git Workflows | kndungu’s Blog</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Understanding Git Workflows" />
+<meta name="author" content="kndungu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Git workflows can seem complex at first, but understanding a few core concepts makes everything click. Let’s explore how to structure your Git workflow for maximum productivity." />
+<meta property="og:description" content="Git workflows can seem complex at first, but understanding a few core concepts makes everything click. Let’s explore how to structure your Git workflow for maximum productivity." />
+<link rel="canonical" href="https://kndungu.github.io/pr-11/understanding-git-workflows/" />
+<meta property="og:url" content="https://kndungu.github.io/pr-11/understanding-git-workflows/" />
+<meta property="og:site_name" content="kndungu’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-02-18T06:52:20+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Understanding Git Workflows" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"kndungu"},"dateModified":"2026-02-18T06:52:20+00:00","datePublished":"2026-02-18T06:52:20+00:00","description":"Git workflows can seem complex at first, but understanding a few core concepts makes everything click. Let’s explore how to structure your Git workflow for maximum productivity.","headline":"Understanding Git Workflows","mainEntityOfPage":{"@type":"WebPage","@id":"https://kndungu.github.io/pr-11/understanding-git-workflows/"},"url":"https://kndungu.github.io/pr-11/understanding-git-workflows/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/pr-11/assets/css/style.css">
+
+    <!-- Feed -->
+    <link type="application/atom+xml" rel="alternate" href="https://kndungu.github.io/pr-11/feed.xml" title="kndungu&apos;s Blog" />
+</head>
+
+<body>
+    <header class="site-header">
+    <div class="container">
+        <div class="site-title">
+            <a href="/pr-11/">kndungu's Blog</a>
+        </div>
+        <nav class="site-nav">
+            <a href="/pr-11/">Home</a>
+            <a href="https://github.com/kndungu" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </div>
+</header>
+
+
+    <main class="container">
+        
+
+
+
+
+
+
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">Understanding Git Workflows</h1>
+        <div class="post-meta">
+            <time datetime="">
+                Published 
+            </time>
+            
+            
+            <span class="author"> • by kndungu</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+        <p>Git workflows can seem complex at first, but understanding a few core concepts makes everything click. Let’s explore how to structure your Git workflow for maximum productivity.</p>
+
+<h2 id="the-basics">The Basics</h2>
+
+<p>Every Git workflow revolves around three key concepts:</p>
+
+<ol>
+  <li><strong>Branches</strong> - Isolated lines of development</li>
+  <li><strong>Commits</strong> - Snapshots of your work</li>
+  <li><strong>Merges</strong> - Combining changes from different branches</li>
+</ol>
+
+<h2 id="feature-branch-workflow">Feature Branch Workflow</h2>
+
+<p>The most common workflow for teams looks like this:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a new branch for your feature</span>
+git checkout <span class="nt">-b</span> feature/new-login-page
+
+<span class="c"># Make your changes and commit</span>
+git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"Add: New login page with form validation"</span>
+
+<span class="c"># Push to remote</span>
+git push origin feature/new-login-page
+
+<span class="c"># Open a pull request for review</span>
+</code></pre></div></div>
+
+<h2 id="why-use-pull-requests">Why Use Pull Requests?</h2>
+
+<p>Pull requests provide several benefits:</p>
+
+<ul>
+  <li><strong>Code review</strong> - Team members can review changes before merging</li>
+  <li><strong>Discussion</strong> - Centralized place to discuss implementation</li>
+  <li><strong>Testing</strong> - CI/CD can run tests on the PR branch</li>
+  <li><strong>Documentation</strong> - PRs serve as historical records of why changes were made</li>
+</ul>
+
+<h2 id="best-practices">Best Practices</h2>
+
+<h3 id="commit-messages">Commit Messages</h3>
+
+<p>Write clear, descriptive commit messages:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Good: "Fix: Login form validation error on empty password"
+Bad:  "fixed bug"
+</code></pre></div></div>
+
+<h3 id="branch-naming">Branch Naming</h3>
+
+<p>Use descriptive branch names:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>feature/user-authentication
+bugfix/payment-processing-error
+hotfix/security-vulnerability
+</code></pre></div></div>
+
+<h3 id="keep-branches-short-lived">Keep Branches Short-Lived</h3>
+
+<p>Merge branches quickly to avoid merge conflicts. Long-lived feature branches become painful to merge.</p>
+
+<h2 id="git-history-as-documentation">Git History as Documentation</h2>
+
+<p>Your Git history tells the story of your project. Good commits and PR descriptions make it easy to understand:</p>
+
+<ul>
+  <li>Why changes were made</li>
+  <li>What problem was being solved</li>
+  <li>How the solution works</li>
+</ul>
+
+<p>This is why every blog post on this site shows its Git history - transparency builds trust.</p>
+
+<h2 id="key-takeaways">Key Takeaways</h2>
+
+<ol>
+  <li>Use branches for all changes</li>
+  <li>Write descriptive commit messages</li>
+  <li>Review code through pull requests</li>
+  <li>Keep branches short-lived</li>
+  <li>Treat Git history as documentation</li>
+</ol>
+
+<p>Master these concepts, and Git becomes a powerful tool rather than a confusing obstacle.</p>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="post-history" data-owner="kndungu" data-repo="kndungu.github.io" data-path="_articles/understanding-git-workflows.md">
+    <hr>
+    <div class="history-info">
+        <h3>📜 Post History & Versions</h3>
+        <p>This blog post is version-controlled. You can view all changes, edits, and revisions made over time.</p>
+
+        
+
+<div class="version-viewer">
+    <button id="view-versions-btn" class="btn-versions">
+        ▼ View Past Versions & Diffs
+    </button>
+
+    <div id="versions-panel" class="versions-panel" style="display: none;">
+        <div id="versions-list"></div>
+    </div>
+</div>
+
+<!-- Modal for viewing versions and diffs -->
+<div id="version-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="version-modal-title">Version</h2>
+            <span class="modal-close">&times;</span>
+        </div>
+        <div id="version-content" class="modal-body"></div>
+    </div>
+</div>
+
+
+        <a href="https://github.com/kndungu/kndungu.github.io/commits/main/_articles/understanding-git-workflows.md" class="history-button"
+            target="_blank" rel="noopener">
+            View Full History on GitHub →
+        </a>
+        <p class="history-meta">
+            <small>File: <code>_articles/understanding-git-workflows.md</code></small><br>
+            
+            <small>Revisions: 1 • Last modified: </small>
+            
+        </p>
+    </div>
+</div>
+
+
+    <footer class="post-footer">
+        <nav class="post-navigation">
+            
+            <div class="prev-post">
+                <a href="/pr-11/markdown-tips-and-tricks/">← Markdown Tips and Tricks</a>
+            </div>
+            
+
+            
+            <div class="next-post">
+                <a href="/pr-11/welcome-to-my-blog/">Welcome to My Blog →</a>
+            </div>
+            
+        </nav>
+    </footer>
+</article>
+
+<!-- Include version viewer JavaScript -->
+<script src="/pr-11/assets/js/post-history.js"></script>
+
+    </main>
+
+    <footer class="site-footer">
+    <div class="container">
+        <p>&copy; 2026 kndungu. All content version-controlled and transparent.</p>
+        <p>Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a> and <a
+                href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a></p>
+    </div>
+</footer>
+
+</body>
+
+</html>

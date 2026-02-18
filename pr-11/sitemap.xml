@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://kndungu.github.io/pr-11/automation-and-ci-cd/</loc>
+<lastmod>2026-02-18T06:52:20+00:00</lastmod>
+</url>
+<url>
+<loc>https://kndungu.github.io/pr-11/building-static-sites/</loc>
+<lastmod>2026-02-18T06:52:20+00:00</lastmod>
+</url>
+<url>
+<loc>https://kndungu.github.io/pr-11/getting-started-with-jekyll/</loc>
+<lastmod>2026-02-18T06:52:20+00:00</lastmod>
+</url>
+<url>
+<loc>https://kndungu.github.io/pr-11/markdown-tips-and-tricks/</loc>
+<lastmod>2026-02-18T06:52:20+00:00</lastmod>
+</url>
+<url>
+<loc>https://kndungu.github.io/pr-11/understanding-git-workflows/</loc>
+<lastmod>2026-02-18T06:52:20+00:00</lastmod>
+</url>
+<url>
+<loc>https://kndungu.github.io/pr-11/welcome-to-my-blog/</loc>
+<lastmod>2026-02-18T06:52:20+00:00</lastmod>
+</url>
+<url>
 <loc>https://kndungu.github.io/pr-11/</loc>
 </url>
 </urlset>

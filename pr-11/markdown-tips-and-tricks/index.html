@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A blog powered by Jekyll and GitHub Pages">
+    <meta name="author" content="kndungu">
+    <title>Markdown Tips and Tricks</title>
+
+    <!-- SEO -->
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Markdown Tips and Tricks | kndungu’s Blog</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Markdown Tips and Tricks" />
+<meta name="author" content="kndungu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Markdown is the lingua franca of technical writing. Learning a few tricks can make your writing more effective and your documents more readable." />
+<meta property="og:description" content="Markdown is the lingua franca of technical writing. Learning a few tricks can make your writing more effective and your documents more readable." />
+<link rel="canonical" href="https://kndungu.github.io/pr-11/markdown-tips-and-tricks/" />
+<meta property="og:url" content="https://kndungu.github.io/pr-11/markdown-tips-and-tricks/" />
+<meta property="og:site_name" content="kndungu’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-02-18T06:52:20+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Markdown Tips and Tricks" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"kndungu"},"dateModified":"2026-02-18T06:52:20+00:00","datePublished":"2026-02-18T06:52:20+00:00","description":"Markdown is the lingua franca of technical writing. Learning a few tricks can make your writing more effective and your documents more readable.","headline":"Markdown Tips and Tricks","mainEntityOfPage":{"@type":"WebPage","@id":"https://kndungu.github.io/pr-11/markdown-tips-and-tricks/"},"url":"https://kndungu.github.io/pr-11/markdown-tips-and-tricks/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/pr-11/assets/css/style.css">
+
+    <!-- Feed -->
+    <link type="application/atom+xml" rel="alternate" href="https://kndungu.github.io/pr-11/feed.xml" title="kndungu&apos;s Blog" />
+</head>
+
+<body>
+    <header class="site-header">
+    <div class="container">
+        <div class="site-title">
+            <a href="/pr-11/">kndungu's Blog</a>
+        </div>
+        <nav class="site-nav">
+            <a href="/pr-11/">Home</a>
+            <a href="https://github.com/kndungu" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </div>
+</header>
+
+
+    <main class="container">
+        
+
+
+
+
+
+
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">Markdown Tips and Tricks</h1>
+        <div class="post-meta">
+            <time datetime="">
+                Published 
+            </time>
+            
+            
+            <span class="author"> • by kndungu</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+        <p>Markdown is the lingua franca of technical writing. Learning a few tricks can make your writing more effective and your documents more readable.</p>
+
+<h2 id="the-basics-quick-recap">The Basics (Quick Recap)</h2>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># Heading 1</span>
+<span class="gu">## Heading 2</span>
+<span class="gu">### Heading 3</span>
+
+<span class="gs">**Bold text**</span>
+<span class="ge">*Italic text*</span>
+<span class="sb">`inline code`</span>
+
+<span class="p">[</span><span class="nv">Link text</span><span class="p">](</span><span class="sx">https://example.com</span><span class="p">)</span>
+<span class="p">![</span><span class="nv">Image alt</span><span class="p">](</span><span class="sx">image.jpg</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="advanced-formatting">Advanced Formatting</h2>
+
+<h3 id="task-lists">Task Lists</h3>
+
+<p>Great for TODOs and checklists:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> [x] Learn Markdown basics
+<span class="p">-</span> [x] Write first blog post
+<span class="p">-</span> [ ] Master advanced features
+</code></pre></div></div>
+
+<p>Renders as:</p>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Learn Markdown basics</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Write first blog post</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Master advanced features</li>
+</ul>
+
+<h3 id="tables">Tables</h3>
+
+<p>Create clean, readable tables:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| Feature | Markdown | HTML |
+|---------|----------|------|
+| Speed   | ⚡ Fast  | 🐌 Slow |
+| Learning | Easy | Hard |
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Markdown</th>
+      <th>HTML</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Speed</td>
+      <td>⚡ Fast</td>
+      <td>🐌 Slow</td>
+    </tr>
+    <tr>
+      <td>Learning</td>
+      <td>Easy</td>
+      <td>Hard</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="code-blocks-with-syntax-highlighting">Code Blocks with Syntax Highlighting</h3>
+
+<p>Specify the language for syntax highlighting:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s2">`Hello, </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">!`</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greet</span><span class="p">(</span><span class="dl">'</span><span class="s1">World</span><span class="dl">'</span><span class="p">));</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s">"Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">!"</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">greet</span><span class="p">(</span><span class="s">"World"</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h2 id="pro-tips">Pro Tips</h2>
+
+<h3 id="1-use-reference-links">1. Use Reference Links</h3>
+
+<p>Instead of inline links that make text hard to read:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Check out <span class="p">[</span><span class="nv">this awesome site</span><span class="p">](</span><span class="sx">https://verylongurl.com/with/many/paths</span><span class="p">)</span> 
+and <span class="p">[</span><span class="nv">this other site</span><span class="p">](</span><span class="sx">https://anotherlongurl.com/more/paths</span><span class="p">)</span>.
+</code></pre></div></div>
+
+<p>Use reference-style links:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Check out <span class="p">[</span><span class="nv">this awesome site</span><span class="p">][</span><span class="ss">1</span><span class="p">]</span> and <span class="p">[</span><span class="nv">this other site</span><span class="p">][</span><span class="ss">2</span><span class="p">]</span>.
+
+<span class="p">[</span><span class="ss">1</span><span class="p">]:</span> <span class="sx">https://verylongurl.com/with/many/paths</span>
+<span class="p">[</span><span class="ss">2</span><span class="p">]:</span> <span class="sx">https://anotherlongurl.com/more/paths</span>
+</code></pre></div></div>
+
+<h3 id="2-nested-lists">2. Nested Lists</h3>
+
+<p>Indent with 2-4 spaces for nested lists:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">1.</span> First item
+<span class="p">   -</span> Sub-item A
+<span class="p">   -</span> Sub-item B
+<span class="p">2.</span> Second item
+<span class="p">   1.</span> Numbered sub-item
+<span class="p">   2.</span> Another numbered sub-item
+</code></pre></div></div>
+
+<h3 id="3-blockquotes-for-emphasis">3. Blockquotes for Emphasis</h3>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; This is an important quote or callout.</span>
+<span class="gt">&gt; </span>
+<span class="gt">&gt; It can span multiple paragraphs.</span>
+</code></pre></div></div>
+
+<p>Renders as:</p>
+
+<blockquote>
+  <p>This is an important quote or callout.</p>
+
+  <p>It can span multiple paragraphs.</p>
+</blockquote>
+
+<h3 id="4-horizontal-rules">4. Horizontal Rules</h3>
+
+<p>Separate sections with horizontal rules:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">---
+</span></code></pre></div></div>
+
+<h2 id="markdown-flavors">Markdown Flavors</h2>
+
+<p>Different platforms support different Markdown features:</p>
+
+<ul>
+  <li><strong>CommonMark</strong> - Standard specification</li>
+  <li><strong>GitHub Flavored Markdown (GFM)</strong> - Adds tables, task lists, strikethrough</li>
+  <li><strong>Kramdown</strong> - Jekyll’s Markdown (adds footnotes, more)</li>
+</ul>
+
+<p>This blog uses Kramdown, which supports some extra features:</p>
+
+<h3 id="footnotes">Footnotes</h3>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Here's a statement that needs a citation[^1].
+
+<span class="p">[</span><span class="ss">^1</span><span class="p">]:</span> <span class="sx">This</span> is the footnote content.
+</code></pre></div></div>
+
+<h3 id="inline-attribute-lists">Inline Attribute Lists</h3>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{: .class-name}
+This paragraph has a CSS class applied.
+</code></pre></div></div>
+
+<h2 id="writing-tips">Writing Tips</h2>
+
+<h3 id="keep-it-simple">Keep It Simple</h3>
+
+<p>Don’t over-format. Markdown’s strength is readability:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gs">**This**</span> <span class="ge">*is*</span> ~~too~~ <span class="sb">`much`</span> <span class="gs">**formatting**</span>.
+</code></pre></div></div>
+
+<h3 id="use-headers-for-structure">Use Headers for Structure</h3>
+
+<p>Good header hierarchy helps readers scan:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># Main Topic</span>
+<span class="gu">## Subtopic</span>
+<span class="gu">### Detail</span>
+</code></pre></div></div>
+
+<h3 id="code-blocks-for-examples">Code Blocks for Examples</h3>
+
+<p>When explaining technical concepts, show examples:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Use <span class="sb">`backticks`</span> for inline code.
+
+Use triple backticks for code blocks:
+</code></pre></div></div>
+
+<h2 id="tools-i-use">Tools I Use</h2>
+
+<ul>
+  <li><strong>Typora</strong> - WYSIWYG Markdown editor</li>
+  <li><strong>VS Code</strong> - With Markdown preview</li>
+  <li><strong>Marked 2</strong> (Mac) - Markdown preview tool</li>
+  <li><strong>Grammarly</strong> - Grammar checking</li>
+</ul>
+
+<h2 id="the-power-of-plain-text">The Power of Plain Text</h2>
+
+<p>Markdown’s greatest strength is that it’s plain text. This means:</p>
+
+<ul>
+  <li>Works everywhere</li>
+  <li>Version control friendly</li>
+  <li>Future-proof</li>
+  <li>Easy to backup</li>
+  <li>Searchable</li>
+  <li>Fast to edit</li>
+</ul>
+
+<p>No vendor lock-in, no proprietary formats, no corruption. Just text.</p>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="https://commonmark.org/">CommonMark Spec</a></li>
+  <li><a href="https://github.github.com/gfm/">GitHub Flavored Markdown</a></li>
+  <li><a href="https://www.markdownguide.org/">Markdown Guide</a></li>
+  <li><a href="https://kramdown.gettalong.org/syntax.html">Kramdown Syntax</a></li>
+</ul>
+
+<p>Happy writing! 📝</p>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="post-history" data-owner="kndungu" data-repo="kndungu.github.io" data-path="_articles/markdown-tips-and-tricks.md">
+    <hr>
+    <div class="history-info">
+        <h3>📜 Post History & Versions</h3>
+        <p>This blog post is version-controlled. You can view all changes, edits, and revisions made over time.</p>
+
+        
+
+<div class="version-viewer">
+    <button id="view-versions-btn" class="btn-versions">
+        ▼ View Past Versions & Diffs
+    </button>
+
+    <div id="versions-panel" class="versions-panel" style="display: none;">
+        <div id="versions-list"></div>
+    </div>
+</div>
+
+<!-- Modal for viewing versions and diffs -->
+<div id="version-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="version-modal-title">Version</h2>
+            <span class="modal-close">&times;</span>
+        </div>
+        <div id="version-content" class="modal-body"></div>
+    </div>
+</div>
+
+
+        <a href="https://github.com/kndungu/kndungu.github.io/commits/main/_articles/markdown-tips-and-tricks.md" class="history-button"
+            target="_blank" rel="noopener">
+            View Full History on GitHub →
+        </a>
+        <p class="history-meta">
+            <small>File: <code>_articles/markdown-tips-and-tricks.md</code></small><br>
+            
+            <small>Revisions: 1 • Last modified: </small>
+            
+        </p>
+    </div>
+</div>
+
+
+    <footer class="post-footer">
+        <nav class="post-navigation">
+            
+            <div class="prev-post">
+                <a href="/pr-11/getting-started-with-jekyll/">← Getting Started with Jekyll</a>
+            </div>
+            
+
+            
+            <div class="next-post">
+                <a href="/pr-11/understanding-git-workflows/">Understanding Git Workflows →</a>
+            </div>
+            
+        </nav>
+    </footer>
+</article>
+
+<!-- Include version viewer JavaScript -->
+<script src="/pr-11/assets/js/post-history.js"></script>
+
+    </main>
+
+    <footer class="site-footer">
+    <div class="container">
+        <p>&copy; 2026 kndungu. All content version-controlled and transparent.</p>
+        <p>Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a> and <a
+                href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a></p>
+    </div>
+</footer>
+
+</body>
+
+</html>
