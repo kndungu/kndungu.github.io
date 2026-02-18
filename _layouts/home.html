@@ -14,9 +14,15 @@ layout: default
 
         <a href="{{ post.url | relative_url }}" class="post-card">
             <div class="post-card-image">
-                <img src="{{ '/assets/images/posts/' | append: post_filename | append: '.svg' | relative_url }}"
-                    alt="{{ post.title }}"
-                    onerror="this.onerror=null; this.src='{{ '/assets/images/default-post.svg' | relative_url }}'">
+                <!-- Try multiple formats: WebP > PNG > JPG > SVG > fallback -->
+                <picture>
+                    <source srcset="{{ '/assets/images/posts/' | append: post_filename | append: '.webp' | relative_url }}" type="image/webp">
+                    <source srcset="{{ '/assets/images/posts/' | append: post_filename | append: '.png' | relative_url }}" type="image/png">
+                    <source srcset="{{ '/assets/images/posts/' | append: post_filename | append: '.jpg' | relative_url }}" type="image/jpeg">
+                    <img src="{{ '/assets/images/posts/' | append: post_filename | append: '.svg' | relative_url }}"
+                        alt="{{ post.title }}"
+                        onerror="this.onerror=null; this.src='{{ '/assets/images/default-post.svg' | relative_url }}'">
+                </picture>
             </div>
             <div class="post-card-content">
                 <h2 class="post-card-title">{{ post.title }}</h2>

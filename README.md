@@ -148,8 +148,29 @@ author: "Your Name"
 
 ### Adding Images
 
+**For images within post content:**
 1. Put images in `assets/images/`  
 2. Reference in posts: `![Alt text](/assets/images/photo.jpg)`
+
+**For homepage post thumbnails:**
+
+Add an image file to `assets/images/posts/` matching your post's filename:
+
+```
+_posts/my-awesome-post.md
+assets/images/posts/my-awesome-post.webp  ← Best (modern, smallest)
+                    my-awesome-post.png   ← Good (lossless, screenshots)
+                    my-awesome-post.jpg   ← Good (photos)
+                    my-awesome-post.svg   ← Good (logos, icons)
+```
+
+**Supported formats** (in order of preference):
+- **WebP** - Best compression, modern browsers (recommended for photos)
+- **PNG** - Lossless, great for screenshots or images with text
+- **JPG** - Standard for photographs
+- **SVG** - Scalable, perfect for logos and simple graphics
+
+The system automatically tries formats in order and falls back to the default image if none exist. Use whatever format best suits your content!
 
 ## 🔧 Local Development
 
