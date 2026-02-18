@@ -2,7 +2,9 @@
 title: "Welcome to My Blog"
 ---
 
-Welcome to my blog! This is a special kind of blog where transparency and history matter.
+Welcome to my blog! This isn't your typical blog - it's a **living document** where every change is tracked, every edit is visible, and the complete history is available for anyone to explore.
+
+Think of it as a blog meets version control system. Transparency and history aren't just features here - they're fundamental principles.
 
 ## What Makes This Blog Different?
 
