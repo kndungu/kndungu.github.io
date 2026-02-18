@@ -21,11 +21,11 @@
 <meta property="og:url" content="https://kndungu.github.io/understanding-git-workflows/" />
 <meta property="og:site_name" content="kndungu’s Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-02-18T07:16:42+00:00" />
+<meta property="article:published_time" content="2026-02-18T07:33:13+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Understanding Git Workflows" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"kndungu"},"dateModified":"2026-02-18T07:16:42+00:00","datePublished":"2026-02-18T07:16:42+00:00","description":"Git workflows can seem complex at first, but understanding a few core concepts makes everything click. Let’s explore how to structure your Git workflow for maximum productivity.","headline":"Understanding Git Workflows","mainEntityOfPage":{"@type":"WebPage","@id":"https://kndungu.github.io/understanding-git-workflows/"},"url":"https://kndungu.github.io/understanding-git-workflows/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"kndungu"},"dateModified":"2026-02-18T07:33:13+00:00","datePublished":"2026-02-18T07:33:13+00:00","description":"Git workflows can seem complex at first, but understanding a few core concepts makes everything click. Let’s explore how to structure your Git workflow for maximum productivity.","headline":"Understanding Git Workflows","mainEntityOfPage":{"@type":"WebPage","@id":"https://kndungu.github.io/understanding-git-workflows/"},"url":"https://kndungu.github.io/understanding-git-workflows/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -148,6 +148,85 @@ hotfix/security-vulnerability
 </ul>
 
 <p>This is why every blog post on this site shows its Git history - transparency builds trust.</p>
+
+<h2 id="merge-strategies">Merge Strategies</h2>
+
+<p>When integrating changes from one branch to another, Git offers several strategies. Understanding these helps you maintain the history that makes sense for your project.</p>
+
+<h3 id="merge-commit">Merge Commit</h3>
+
+<p>Creates a new commit that combines two branches:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout main
+git merge feature-branch
+</code></pre></div></div>
+
+<p><strong>Pros:</strong></p>
+<ul>
+  <li>Preserves complete history of both branches</li>
+  <li>Shows exactly when features were integrated</li>
+  <li>Easy to revert an entire feature</li>
+</ul>
+
+<p><strong>Cons:</strong></p>
+<ul>
+  <li>Creates additional merge commits</li>
+  <li>History can become cluttered with many branches</li>
+</ul>
+
+<h3 id="squash-and-merge">Squash and Merge</h3>
+
+<p>Combines all commits from a feature branch into a single commit:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout main
+git merge <span class="nt">--squash</span> feature-branch
+git commit <span class="nt">-m</span> <span class="s2">"Add: Complete user authentication feature"</span>
+</code></pre></div></div>
+
+<p><strong>Pros:</strong></p>
+<ul>
+  <li>Keeps main branch clean and readable</li>
+  <li>Each feature becomes one commit</li>
+  <li>Easier to find when specific features were added</li>
+</ul>
+
+<p><strong>Cons:</strong></p>
+<ul>
+  <li>Loses granular commit history from feature branch</li>
+  <li>Can’t cherry-pick individual sub-commits</li>
+</ul>
+
+<h3 id="rebase-and-merge">Rebase and Merge</h3>
+
+<p>Replays commits from your branch on top of the target branch:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout feature-branch
+git rebase main
+git checkout main
+git merge feature-branch  <span class="c"># Fast-forward merge</span>
+</code></pre></div></div>
+
+<p><strong>Pros:</strong></p>
+<ul>
+  <li>Creates linear history without merge commits</li>
+  <li>Maintains individual commits</li>
+  <li>Clean, easy-to-follow history</li>
+</ul>
+
+<p><strong>Cons:</strong></p>
+<ul>
+  <li>Rewrites commit history (never rebase shared branches!)</li>
+  <li>Harder to see when features were integrated</li>
+  <li>Can be confusing for Git beginners</li>
+</ul>
+
+<h3 id="which-strategy-to-use">Which Strategy to Use?</h3>
+
+<ul>
+  <li><strong>Squash merge</strong> - Best for most teams; keeps main clean while reducing noise</li>
+  <li><strong>Merge commit</strong> - Good when you need to preserve detailed feature history</li>
+  <li><strong>Rebase</strong> - Use for personal branches before opening a PR to clean up commits</li>
+</ul>
 
 <h2 id="key-takeaways">Key Takeaways</h2>
 
