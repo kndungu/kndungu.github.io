@@ -24,6 +24,17 @@ This blog is powered by [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pa
 
 Every post has a "View History" button at the bottom that shows all the changes made to that specific post over time.
 
+## Interactive Version Viewer
+
+One of the coolest features of this blog is the **built-in version viewer**. For every post, you can:
+
+- Browse through all previous versions
+- See exactly what changed between any two versions
+- View color-coded diffs (additions in green, deletions in red)
+- Read the commit messages explaining why changes were made
+
+Try clicking "View Past Versions & Diffs" on any post to explore this feature!
+
 ## Why Version Control for Blogging?
 
 As ideas evolve, so should the content. Traditional blogs hide their edit history, but I believe in **transparent knowledge sharing**:
