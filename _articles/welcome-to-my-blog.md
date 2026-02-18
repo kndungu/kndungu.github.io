@@ -78,6 +78,8 @@ Check out the README and ARCHITECTURE.md files in the repository for a complete 
 
 Thanks for reading! Feel free to explore the blog, check out the post histories, and see how ideas evolve over time.
 
+If you have questions, suggestions, or spot something that could be improved, don't hesitate to open an issue or submit a pull request on GitHub. This blog is a collaborative space!
+
 ---
 
-**Note**: Click the "View Full History on GitHub" button below to see this post's commit history (though it's brand new, so there's not much to see yet!).
+**Note**: Use the "View Past Versions & Diffs" button below to see how this post has evolved since it was first published. You'll see multiple revisions showing how I refined the content over time!
