@@ -4,20 +4,26 @@
  */
 
 class PostHistoryViewer {
-    constructor(repoOwner, repoName, filePath) {
+    constructor(repoOwner, repoName, filePath, branch = 'main') {
         this.repoOwner = repoOwner;
         this.repoName = repoName;
         this.filePath = filePath;
+        this.branch = branch;
         this.commits = [];
         this.currentVersionIndex = null;
     }
 
     async fetchCommits() {
-        const url = `https://api.github.com/repos/${this.repoOwner}/${this.repoName}/commits?path=${this.filePath}`;
+        const url = `https://api.github.com/repos/${this.repoOwner}/${this.repoName}/commits?path=${this.filePath}&sha=${this.branch}`;
+        console.log('Fetching commits from:', url);
         try {
             const response = await fetch(url);
-            if (!response.ok) throw new Error('Failed to fetch commits');
+            if (!response.ok) {
+                console.error('API response not OK:', response.status, response.statusText);
+                throw new Error(`Failed to fetch commits: ${response.status} ${response.statusText}`);
+            }
             this.commits = await response.json();
+            console.log('Fetched commits:', this.commits.length);
             return this.commits;
         } catch (error) {
             console.error('Error fetching commits:', error);
@@ -63,7 +69,12 @@ class PostHistoryViewer {
 
         this.fetchCommits().then(commits => {
             if (commits.length === 0) {
-                container.innerHTML = '<p class="no-versions">No version history available.</p>';
+                container.innerHTML = `
+                    <p class="no-versions">
+                        No version history available yet. 
+                        <br><small>Looking for: ${this.filePath} on branch: ${this.branch}</small>
+                        <br><small>This could mean the file is new or the branch hasn't been merged yet.</small>
+                    </p>`;
                 return;
             }
 
@@ -253,9 +264,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const repoOwner = historySection.dataset.owner;
     const repoName = historySection.dataset.repo;
     const filePath = historySection.dataset.path;
+    const branch = historySection.dataset.branch || 'main';
 
     if (repoOwner && repoName && filePath) {
-        window.postHistory = new PostHistoryViewer(repoOwner, repoName, filePath);
+        window.postHistory = new PostHistoryViewer(repoOwner, repoName, filePath, branch);
 
         // Add event listener for the button
         const viewVersionsBtn = document.getElementById('view-versions-btn');
