@@ -1,0 +1,24 @@
+{% comment %}
+Version viewer component for viewing past versions and diffs
+{% endcomment %}
+
+<div class="version-viewer">
+    <button id="view-versions-btn" class="btn-versions">
+        ▼ View Past Versions & Diffs
+    </button>
+
+    <div id="versions-panel" class="versions-panel" style="display: none;">
+        <div id="versions-list"></div>
+    </div>
+</div>
+
+<!-- Modal for viewing versions and diffs -->
+<div id="version-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="version-modal-title">Version</h2>
+            <span class="modal-close">&times;</span>
+        </div>
+        <div id="version-content" class="modal-body"></div>
+    </div>
+</div>

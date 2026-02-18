@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<div class="home">
+    <h1 class="page-heading">Recent Posts</h1>
+
+    {{ content }}
+
+    <div class="posts-grid">
+        {% for post in site.posts %}
+        {% assign post_filename = post.path | split: "/" | last | replace: ".md", "" %}
+        {% assign git_data = site.data.git_dates.posts[post_filename] %}
+
+        <a href="{{ post.url | relative_url }}" class="post-card">
+            <div class="post-card-image">
+                <img src="{{ '/assets/images/posts/' | append: post_filename | append: '.jpg' | relative_url }}"
+                    alt="{{ post.title }}"
+                    onerror="this.onerror=null; this.src='{{ '/assets/images/default-post.svg' | relative_url }}'">
+            </div>
+            <div class="post-card-content">
+                <h2 class="post-card-title">{{ post.title }}</h2>
+                <div class="post-card-date">
+                    {% if git_data.published %}
+                    {{ git_data.published | date: "%b %-d, %Y" }}
+                    {% else %}
+                    {{ post.date | date: "%b %-d, %Y" }}
+                    {% endif %}
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+
+    {% if site.posts.size == 0 %}
+    <p class="no-posts">No posts yet. Create your first post in the <code>_posts</code> directory!</p>
+    {% endif %}
+</div>

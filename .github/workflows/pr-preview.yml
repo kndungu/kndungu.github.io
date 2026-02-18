@@ -1,0 +1,118 @@
+name: PR Preview Deployment
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [ main ]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for Git dates
+      
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+      
+      - name: Extract Git dates for posts
+        run: |
+          mkdir -p _data
+          echo "# Auto-generated Git metadata for blog posts" > _data/git_dates.yml
+          echo "posts:" >> _data/git_dates.yml
+          
+          for post in _posts/*.md; do
+            if [ -f "$post" ]; then
+              filename=$(basename "$post")
+              first_commit=$(git log --follow --format=%aI --reverse "$post" | head -1)
+              last_commit=$(git log -1 --format=%aI "$post")
+              commit_count=$(git log --follow --oneline "$post" | wc -l)
+              
+              echo "  \"$filename\":" >> _data/git_dates.yml
+              echo "    published: $first_commit" >> _data/git_dates.yml
+              echo "    modified: $last_commit" >> _data/git_dates.yml
+              echo "    revisions: $commit_count" >> _data/git_dates.yml
+            fi
+          done
+      
+      - name: Build Jekyll with PR baseurl
+        run: |
+          bundle exec jekyll build --baseurl "/pr-${{ github.event.pull_request.number }}" --trace
+        env:
+          JEKYLL_ENV: production
+      
+      - name: Deploy to gh-pages PR subdirectory
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          destination_dir: pr-${{ github.event.pull_request.number }}
+          keep_files: true  # Keep other PR previews
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'Deploy PR #${{ github.event.pull_request.number }} preview'
+      
+      - name: Comment PR with preview link
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            // For username.github.io repos, URL is just https://username.github.io/pr-XX/
+            // For other repos, URL would be https://username.github.io/repo/pr-XX/
+            const isUserSite = context.payload.repository.name === `${context.payload.repository.owner.login}.github.io`;
+            const baseUrl = isUserSite 
+              ? `https://${context.payload.repository.owner.login}.github.io`
+              : `https://${context.payload.repository.owner.login}.github.io/${context.payload.repository.name}`;
+            const previewUrl = `${baseUrl}/pr-${prNumber}/`;
+            
+            // Find existing comment
+            const comments = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+            });
+            
+            const botComment = comments.data.find(comment => 
+              comment.user.type === 'Bot' && 
+              comment.body.includes('🚀 Preview Deployment')
+            );
+            
+            const commentBody = `## 🚀 Preview Deployment
+            
+            Your PR preview is ready! 
+            
+            **Preview URL:** ${previewUrl}
+            
+            ✅ Built from commit: ${context.payload.pull_request.head.sha.substring(0, 7)}
+            📝 This preview updates automatically with each push to this PR.
+            
+            ---
+            
+            <sub>Preview will be removed when PR is closed or merged.</sub>`;
+            
+            if (botComment) {
+              // Update existing comment
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: commentBody
+              });
+            } else {
+              // Create new comment
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body: commentBody
+              });
+            }

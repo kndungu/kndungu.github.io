@@ -1,0 +1,75 @@
+name: Build and Deploy Jekyll with Git Dates
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch full history to get all commit dates
+      
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+      
+      - name: Extract Git dates for posts
+        run: |
+          mkdir -p _data
+          echo "# Auto-generated Git metadata for blog posts" > _data/git_dates.yml
+          echo "posts:" >> _data/git_dates.yml
+          
+          # Process each markdown file in _posts
+          for post in _posts/*.md; do
+            if [ -f "$post" ]; then
+              filename=$(basename "$post")
+              
+              # Get first commit date (publication date)
+              first_commit=$(git log --follow --format=%aI --reverse "$post" | head -1)
+              
+              # Get last commit date (last modified)
+              last_commit=$(git log -1 --format=%aI "$post")
+              
+              # Get commit count (number of revisions)
+              commit_count=$(git log --follow --oneline "$post" | wc -l)
+              
+              # Add to YAML
+              echo "  \"$filename\":" >> _data/git_dates.yml
+              echo "    published: $first_commit" >> _data/git_dates.yml
+              echo "    modified: $last_commit" >> _data/git_dates.yml
+              echo "    revisions: $commit_count" >> _data/git_dates.yml
+            fi
+          done
+          
+          echo "Generated _data/git_dates.yml:"
+          cat _data/git_dates.yml
+      
+      - name: Build with Jekyll
+        run: bundle exec jekyll build --trace
+        env:
+          JEKYLL_ENV: production
+      
+      - name: Deploy to gh-pages root
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          keep_files: true  # Keep PR preview subdirectories
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'Deploy main site from ${{ github.sha }}'
+

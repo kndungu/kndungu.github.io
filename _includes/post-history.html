@@ -1,0 +1,29 @@
+{% comment %}
+This component generates a link to view the Git history of the current blog post
+and provides interactive version viewing and diff comparison
+{% endcomment %}
+
+{% assign repo_parts = site.repository | split: "/" %}
+{% assign repo_owner = repo_parts[0] %}
+{% assign repo_name = repo_parts[1] %}
+
+<div class="post-history" data-owner="{{ repo_owner }}" data-repo="{{ repo_name }}" data-path="{{ page.path }}">
+    <hr>
+    <div class="history-info">
+        <h3>📜 Post History & Versions</h3>
+        <p>This blog post is version-controlled. You can view all changes, edits, and revisions made over time.</p>
+
+        {% include version-viewer.html %}
+
+        <a href="https://github.com/{{ site.repository }}/commits/main/{{ page.path }}" class="history-button"
+            target="_blank" rel="noopener">
+            View Full History on GitHub →
+        </a>
+        <p class="history-meta">
+            <small>File: <code>{{ page.path }}</code></small><br>
+            {% if revision_count %}
+            <small>Revisions: {{ revision_count }} • Last modified: {{ modified_date }}</small>
+            {% endif %}
+        </p>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+{% comment %}
+Get Git dates for the current post from the git_dates data file
+{% endcomment %}
+
+{% assign post_filename = page.path | split: "/" | last %}
+{% assign git_data = site.data.git_dates.posts[post_filename] %}
+
+{% if git_data %}
+{% assign published_date = git_data.published | date: "%B %-d, %Y" %}
+{% assign modified_date = git_data.modified | date: "%B %-d, %Y" %}
+{% assign published_iso = git_data.published %}
+{% assign modified_iso = git_data.modified %}
+{% assign revision_count = git_data.revisions %}
+{% else %}
+{% comment %}Fallback to Jekyll defaults if Git data not available{% endcomment %}
+{% assign published_date = page.date | date: "%B %-d, %Y" %}
+{% assign modified_date = page.date | date: "%B %-d, %Y" %}
+{% assign published_iso = page.date | date_to_xmlschema %}
+{% assign modified_iso = page.date | date_to_xmlschema %}
+{% assign revision_count = 1 %}
+{% endif %}
