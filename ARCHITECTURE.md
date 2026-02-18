@@ -148,6 +148,8 @@ The homepage (`index.html`) automatically lists all blog posts in reverse chrono
 ### Automatic Discovery
 Jekyll automatically discovers and publishes any Markdown file in `_posts/`. No manual configuration needed for new posts. Filename can be anything - no date prefix required.
 
+**Technical Note**: This blog uses Jekyll Collections instead of the built-in posts feature. Collections allow completely arbitrary filenames without requiring the `YYYY-MM-DD-` date prefix that traditional Jekyll posts need. This gives you total freedom in naming while maintaining all post functionality.
+
 ### Interactive Version Viewer
 Every blog post includes a built-in version viewer powered by GitHub API:
 - **Browse Versions**: Collapsible timeline of all revisions
