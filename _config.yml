@@ -35,7 +35,7 @@ defaults:
     values:
       layout: "post"
       author: "kndungu"
-      date: 2020-01-01  # Dummy date for Jekyll compatibility (overridden by Git dates)
+      date: "2020-01-01 00:00:00"  # Dummy date for Jekyll compatibility (overridden by Git dates)
 
 # Exclude from processing
 exclude:
