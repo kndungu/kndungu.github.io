@@ -18,21 +18,20 @@ plugins:
 # Using simple permalinks since dates come from Git, not filenames
 permalink: /:title/
 
-# Collections - Using collections instead of posts to allow any filename
+# Collections - Using custom collection to allow any filename (no date prefix)
 collections:
-  posts:
+  articles:
     output: true
     permalink: /:title/
-    sort_by: published_date
 
 # Defaults
-# These settings are automatically applied to all posts
-# Posts only need a title - dates come from Git commit history
+# These settings are automatically applied to all articles
+# Articles only need a title - dates come from Git commit history
 # The GitHub Action extracts first commit date (published) and last commit date (modified)
 defaults:
   - scope:
       path: ""
-      type: "posts"
+      type: "articles"
     values:
       layout: "post"
       author: "kndungu"
